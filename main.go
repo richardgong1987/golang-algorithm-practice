@@ -1,9 +1,10 @@
 package main
 
 import (
-	"mycode/util"
+	"mycode/word"
 )
 
 func main() {
-	util.Main()
+	//util.Main()
+	word.Main()
 }
