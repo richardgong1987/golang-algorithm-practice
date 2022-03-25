@@ -1,5 +1,8 @@
 package word
 
+/**
+Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
+*/
 func ladderLength(beginWord string, endWord string, wordArray []string) int {
 	reached := NewStringSet([]string{beginWord})
 	wordList := NewStringSet(wordArray)
