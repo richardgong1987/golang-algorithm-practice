@@ -4,23 +4,15 @@ func BoxBlurImage(image [][]int) [][]int {
 	rowLen := len(image)
 	colLen := len(image[0])
 
-	rPoiter := 0
-	cPoiter := 0
-
 	var blurImage [][]int
 
-	for rPoiter <= rowLen-3 {
+	for rPoiter := 0; rPoiter <= rowLen-3; rPoiter++ {
 		var rowBlur []int
-		for cPoiter <= colLen-3 {
+		for cPoiter := 0; cPoiter <= colLen-3; cPoiter++ {
 			unitAvg := getUnitSum(image, rPoiter, cPoiter)
 			rowBlur = append(rowBlur, unitAvg)
-			cPoiter++
 		}
-
 		blurImage = append(blurImage, rowBlur)
-
-		rPoiter++
-		cPoiter = 0
 	}
 
 	return blurImage
