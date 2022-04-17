@@ -1,6 +1,9 @@
 package word
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func Main() {
 	//beginWord := "hit"
@@ -9,45 +12,28 @@ func Main() {
 	//
 	//length := ladderLength(beginWord, endWord, wordList)
 	//fmt.Println(length)
-
-	i := solution([]int{8, 1, 0, 4, 7})
-	fmt.Println(i)
+	fmt.Println(strings.Repeat("*", 4))
 
 }
-
-func solution(statues []int) int {
-	quickSort(statues, 0, len(statues)-1)
-	arrLen := len(statues)
-	return (statues[arrLen-1] - statues[0] + 1) - arrLen
+func solution(inputString string) string {
+	return ""
 }
-
-func quickSort(arr []int, lo int, hi int) {
-	if lo >= hi {
-		return
-	}
-	pivot := partition(arr, lo, hi)
-	quickSort(arr, lo, pivot-1)
-	quickSort(arr, pivot+1, hi)
-}
-func partition(arr []int, lo int, hi int) int {
-	pivot := arr[lo]
-	left := lo
-	right := hi
-	for left != right {
-		for left < right && arr[right] > pivot {
-			right--
-		}
-		for left < right && arr[left] <= pivot {
-			left++
-		}
-
-		if left < right {
-			swap(arr, left, right)
+func compareTriplets(a []int32, b []int32) []int32 {
+	// Write your code here
+	arr := []int32{0, 0}
+	for i := range a {
+		if a[i] > b[i] {
+			arr[0] = arr[0] + 1
+		} else if a[i] < b[i] {
+			arr[1] = arr[1] + 1
 		}
 	}
-	swap(arr, left, lo)
-	return left
+	return arr
 }
-func swap(arr []int, a int, b int) {
-	arr[a], arr[b] = arr[b], arr[a]
+func strReverse(str string) string {
+	ret := ""
+	for _, v := range str {
+		ret = string(v) + ret
+	}
+	return ret
 }

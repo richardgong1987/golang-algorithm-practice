@@ -1,10 +1,11 @@
 package main
 
 import (
-	"mycode/word"
+	"mycode/codesignal"
 )
 
 func main() {
 	//util.Main()
-	word.Main()
+	//word.Main()
+	codesignal.Main()
 }
