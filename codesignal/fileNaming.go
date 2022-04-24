@@ -3,7 +3,6 @@ package codesignal
 import "strconv"
 
 func FileNaming(names []string) []string {
-
 	for i, name := range names {
 		if Contains(names[:i], name) {
 			j := 1
